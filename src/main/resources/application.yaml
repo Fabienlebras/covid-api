@@ -3,9 +3,9 @@ spring:
     enabled: false
   datasource:
     url: jdbc:postgresql://localhost:5432/covid-db
-    username: postgre
-    root: root
+    username: postgres
+    password: root
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
-  
+    hibernate.ddl-auto: create
