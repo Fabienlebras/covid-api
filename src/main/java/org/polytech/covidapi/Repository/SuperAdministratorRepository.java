@@ -1,5 +1,11 @@
 package org.polytech.covidapi.Repository;
 
-public class SuperAdministratorRepository {
-    
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.polytech.covidapi.Model.SuperAdministrator;
+
+
+@Repository
+public interface SuperAdministratorRepository extends JpaRepository<SuperAdministrator,Long>{
+
 }
