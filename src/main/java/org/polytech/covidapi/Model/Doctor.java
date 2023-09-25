@@ -14,44 +14,47 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     @ManyToOne
     private VaccinationCenter vaccinationCenter;
 
-    public Doctor(String name, VaccinationCenter vaccinationCenter) {
-        this.name = name;
+    public Doctor(String firstName, String lastName, VaccinationCenter vaccinationCenter) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.vaccinationCenter = vaccinationCenter;
     }
 
-
     public Doctor() {
-        
+
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public VaccinationCenter getVaccinationCenter() {
+        return vaccinationCenter;
     }
 
-    public String getName() {
-        return name;
+    public void setVaccinationCenter(VaccinationCenter vaccinationCenter) {
+        this.vaccinationCenter = vaccinationCenter;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-      public VaccinationCenter getVaccinationCenter() {
-      return vaccinationCenter;
-      }
-      
-      public void setVaccinationCenter(VaccinationCenter vaccinationCenter) {
-      this.vaccinationCenter = vaccinationCenter;
-      }
-     
 
 }

@@ -17,7 +17,7 @@ public class CovidApiApplication {
     @Bean
     public CommandLineRunner init(VaccinationCenterService vaccinationCenterService) {
         return args -> {
-            VaccinationCenter vaccinationCenter = new VaccinationCenter("Nom du centre", "Adresse du centre", "Ville du centre");
+            VaccinationCenter vaccinationCenter = new VaccinationCenter("Nom du centre", "Adresse du centre", "nanc");
             vaccinationCenterService.save(vaccinationCenter);
         };
     }

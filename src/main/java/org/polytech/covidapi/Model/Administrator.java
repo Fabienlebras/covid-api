@@ -13,30 +13,40 @@ public class Administrator {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String mail;
     private String phone;
 
-    public Administrator( String name, String mail, String phone) {
-   
-        this.name = name;
+    public Administrator(String firstName, String lastName, String mail, String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.mail = mail;
         this.phone = phone;
     }
 
-    public Administrator() {
-        
+    public String getFirstName() {
+        return firstName;
     }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Administrator() {
+
+    }
+
     public Long getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getMail() {

@@ -6,18 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/vaccination-center") // Use a different base path to avoid conflicts
+@RequestMapping("/vaccination-center")
 public class VaccinationCenterController {
     @Autowired
     private VaccinationCenterService vaccinationCenterService;
 
-    @GetMapping(value = "/All-center")
-    @ResponseBody // Use this annotation to return data directly, assuming you want JSON data
-    public Iterable<VaccinationCenter> list() {
+    @GetMapping(path = "/All-center")
+    @ResponseBody
+    public Iterable<VaccinationCenter> GetAllVaccinationCenter() {
         return vaccinationCenterService.getVaccinationCenter();
+    }
+
+    @GetMapping(path = "/By-City")
+    @ResponseBody
+    public Iterable<VaccinationCenter> GetVaccinationCenterByCity(
+            @RequestParam(name = "city", required = false) String city) {
+        if (city != null) {
+            return vaccinationCenterService.findVaccinationCentersByCityLike(city);
+
+        } else {
+            return null;
+        }
+
     }
 
 }

@@ -13,34 +13,42 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String mail;
     private String phone;
     private String registrationDate;
 
-    public Patient( String name, String mail, String phone, String registrationDate) {
-  
-        this.name = name;
+    public Patient() {
+
+    }
+
+    public Patient(String firstName, String lastName, String mail, String phone, String registrationDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.mail = mail;
         this.phone = phone;
         this.registrationDate = registrationDate;
-    }
-
-    public Patient() {
-        
     }
 
     public Long getId() {
         return id;
     }
 
-  
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getMail() {
