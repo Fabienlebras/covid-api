@@ -1,10 +1,10 @@
 #From jdk
 FROM eclipse-temurin:17 as jre-build
 
-RUN mkdir /opt/appppppp
+RUN mkdir /opt/apppppppp
 
 
-COPY build/libs/covid-api-0.0.1-SNAPSHOT.jar /opt/appppppp/
+COPY build/libs/covid-api-0.0.1-SNAPSHOT.jar /opt/apppppppp/
 
 
 CMD ["java", "-jar", "/opt/app/covid-api-0.0.1-SNAPSHOT.jar"]
