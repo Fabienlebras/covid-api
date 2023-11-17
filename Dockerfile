@@ -3,10 +3,11 @@ FROM eclipse-temurin:17 as jre-build
 
 RUN mkdir /opt/app
 
+RUN ls -l 
+
 
 COPY build/libs/covid-api-0.0.1-SNAPSHOT.jar /opt/app/
 
-RUN ls -l /opt/app/
 
 CMD ["java", "-jar", "/opt/app/covid-api-0.0.1-SNAPSHOT.jar"]
 
